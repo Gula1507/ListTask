@@ -20,5 +20,16 @@ public class Main {
 
         school.removeStudent(19);
         school.printStudents();
+
+        Course course1 = new Course("math", "Petrow", 123);
+
+        Student student = new Student("David", "Brown", 17);
+
+        student.addCourse(course1);
+        System.out.println(student);
+
+        school.addStudent(student);
+        System.out.println(school.getCourses(17));
+
     }
 }

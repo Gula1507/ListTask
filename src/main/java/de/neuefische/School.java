@@ -1,6 +1,7 @@
 package de.neuefische;
 
 import java.util.List;
+import java.util.Optional;
 
 public class School {
     List<Student> students;
@@ -44,5 +45,11 @@ public class School {
 //            }
 //        }
     }
+
+    public List<Course> getCourses(int id) {
+        Optional<Student> studentToFind = students.stream().filter(student -> student.getID() == id).findFirst();
+        return studentToFind.map(Student::getCourses).orElse(null);
+    }
+
 }
 
